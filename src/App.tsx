@@ -1,22 +1,19 @@
-import './App.css'
-import Card from "./components/Card/Card";
+import { useState } from 'react'
+import Display from './components/Display/Display'
+import MenuList from './components/MenuList/MenuList'
+import './global.css'
 
 function App() {
-  return (
-      <div className='d-flex'>
-        <Card 
-          bgColor={5} 
-          textColor='white'
-          imageUrl='https://picsum.photos/id/237/200/300'
-          description="test"
-        />
+  const [level, setLevel] = useState<string>('Medium')
 
-        <Card 
-          bgColor='blue' 
-          textColor='red'
-          imageUrl='https://picsum.photos/id/238/200/300'
-          description="test 2"
-          />
+  function changeLevel(level: string) {
+    setLevel(level)
+  }
+
+  return (
+      <div className='container'>
+          <MenuList activeLevel={level} handleClick={changeLevel} />
+          <Display activeLevel={level} />
       </div>
   )
 }

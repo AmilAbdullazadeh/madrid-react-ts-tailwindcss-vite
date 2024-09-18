@@ -1,0 +1,11 @@
+.item {
+    border: 1px solid;
+    padding: 12px;
+    border-right: none;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  .active {
+    background-color: #2b8aac87;
+  }
