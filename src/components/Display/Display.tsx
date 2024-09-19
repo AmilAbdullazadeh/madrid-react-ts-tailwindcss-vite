@@ -1,13 +1,13 @@
 import s from './style.module.css';
 
 interface DisplayProps {
-    activeLevel: string;
+    count: number;
 }
 
-function Display({ activeLevel }: DisplayProps) {
+function Display({ count }: DisplayProps) {
     return (
         <div className={`${s.box} ${s.dFlex}`}>
-            <h1>{activeLevel}</h1>
+            <span>{count}</span>
         </div>
     )
 }

@@ -1,19 +1,19 @@
 import { useState } from 'react'
-import Display from './components/Display/Display'
-import MenuList from './components/MenuList/MenuList'
+import Card from './components/Card/Card'
 import './global.css'
+import PasswordGenerator from './components/PasswordGenerator/PasswordGenerator';
+
+interface UserInfo {
+  name: string;
+  age: number;
+  imageurl: string;
+}
 
 function App() {
-  const [level, setLevel] = useState<string>('Medium')
-
-  function changeLevel(level: string) {
-    setLevel(level)
-  }
 
   return (
       <div className='container'>
-          <MenuList activeLevel={level} handleClick={changeLevel} />
-          <Display activeLevel={level} />
+        <PasswordGenerator length={20} />
       </div>
   )
 }
