@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { copyToClipboard, generatePassword } from "../../helpers/password";
 import Input from "../Input/Input";
-import { Button } from "reactstrap";
+import Button from "../Button/Button";
 
 interface IPasswordGeneratorProps {
   length: number;
@@ -11,9 +11,7 @@ const PasswordGenerator: React.FC<IPasswordGeneratorProps> = ({
   length = 12,
 }: IPasswordGeneratorProps) => {
   const [password, setPassword] = useState<string>("");
-  const [passwordStrength, setPasswordStrength] = useState<
-    "weak" | "strong" | "medium"
-  >("weak");
+  const [passwordStrength, setPasswordStrength] = useState<"weak" | "strong" | "medium">("weak");
 
   return (
     <div className="w-full max-w-sm mx-auto p-5 bg-primary border border-solid rounded shadow-md">

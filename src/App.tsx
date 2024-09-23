@@ -1,19 +1,22 @@
-import { useState } from 'react'
-import Card from './components/Card/Card'
+import Deatils from './components/Details/Details'
+import List from './components/List/List'
 import './global.css'
-import PasswordGenerator from './components/PasswordGenerator/PasswordGenerator';
-
-interface UserInfo {
-  name: string;
-  age: number;
-  imageurl: string;
-}
+import Header from './layouts/Header/Header'
 
 function App() {
 
   return (
-      <div className='container'>
-        <PasswordGenerator length={20} />
+      <div className='p-4'>
+        <Header />
+
+        <div className='m-4 border border-solid !rounded-lg h-96 p-4'>
+
+          {/* Deatils */}
+          <Deatils />
+
+          {/* List */}
+          <List />
+        </div>
       </div>
   )
 }

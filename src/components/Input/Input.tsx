@@ -1,16 +1,6 @@
-interface InputProps {
-  value: string;
-  onChange?: (value: string) => void;
-}
-
-const Input = ({ value, onChange }: InputProps) => {
+const Input = () => {
   return (
-    <input
-      type="text"
-      className="w-full p-2 bg-gray-500 border border-solid rounded"
-      value={value}
-      readOnly
-    />
+    <input type="text" name='name' id='name' className='border-2 border-solid !rounded-lg' />
   );
 };
 
