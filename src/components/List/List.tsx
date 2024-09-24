@@ -1,42 +1,19 @@
+import { Movie } from "../../types";
 import Item from "../Item/Item";
 
-interface Movie {
-    title: string;
-    description: string;
-    rating: number;
-    releaseDate: string;
-    image: string;
-  }
-
-const fetchedMovies: Movie[] = [
-    {
-      title: 'Inception',
-      description: 'A mind-bending thriller by Christopher Nolan.',
-      rating: 4.5,
-      releaseDate: '2010-07-16',
-      image: 'https://source.unsplash.com/random',
-    },
-    {
-      title: 'The Matrix',
-      description: 'A cyberpunk action film about simulated reality.',
-      rating: 5,
-      releaseDate: '1999-03-31',
-      image: 'https://source.unsplash.com/random',
-    },
-  ];
-
-const List = () => {
+const List = ({movies, changeMovie}) => {
   return (
-    <div className="gird-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6" >
+    <div className="flex overflow-x-scroll items-center justify-between gap-x-4 p-6" >
       {
-        fetchedMovies.map((movie, index) => (
+        movies?.map((movie: Movie, index: number) => (
           <Item 
             key={index} 
             title={movie.title} 
-            description={movie.description} 
-            rating={movie.rating} 
-            releaseDate={movie.releaseDate} 
-            image={movie.image}
+            description={movie.overview} 
+            rating={movie.vote_average} 
+            releaseDate={movie.release_date} 
+            image={movie.backdrop_path}
+            changeMovie={() => changeMovie(movie)}
           />
         ))
       }

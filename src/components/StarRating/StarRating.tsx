@@ -23,8 +23,8 @@ const StarRating = ({rating = 10}: StarRatingProps) => {
     }
 
     return (
-        <div className='flex' >
-            {getStars()}
+        <div style={{ alignItems: 'center' }} className='flex item-center gap-x-4' >
+            { getStars() } <span className='ml-2' >{ (rating / 2).toFixed(1) } / 5</span>
         </div>
     )
 }
