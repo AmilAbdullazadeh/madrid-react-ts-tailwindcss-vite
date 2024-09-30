@@ -1,20 +1,20 @@
-import { Movie } from "../../types";
-import Item from "../Item/Item";
+import {useSelector} from "react-redux";
 
-const List = ({movies, changeMovie}) => {
+interface IItem {
+    name: string;
+    price: number;
+}
+
+const List = () => {
+  const expenses = useSelector((state: any) => state.expense.expenses)
+
   return (
     <div className="flex overflow-x-scroll items-center justify-between gap-x-4 p-6" >
       {
-        movies?.map((movie: Movie, index: number) => (
-          <Item 
-            key={index} 
-            title={movie.title} 
-            description={movie.overview} 
-            rating={movie.vote_average} 
-            releaseDate={movie.release_date} 
-            image={movie.backdrop_path}
-            changeMovie={() => changeMovie(movie)}
-          />
+        expenses?.map((item: IItem, index: number) => (
+          <div style={{width: '100%', margin: '10px 20px'}} key={index}>
+            {item.name} : {item.price}
+          </div>
         ))
       }
     </div>
